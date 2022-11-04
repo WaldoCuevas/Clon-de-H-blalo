@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DATA } from 'src/app/cards-info';
+import { Imagen } from 'src/app/Models/imagen';
+import { ImagenService } from 'src/app/services/imagen.service';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
@@ -9,6 +11,7 @@ import { LocalStorageService } from 'src/app/services/local-storage.service';
   styleUrls: ['./galery.component.css'],
 })
 export class GaleryComponent implements OnInit {
+
   constructor(
     public localStorageService: LocalStorageService,
     private router: Router
@@ -19,6 +22,7 @@ export class GaleryComponent implements OnInit {
   public data = DATA;
 
   ngOnInit(): void {
+
     if (!this.localStorageService.isEmptyData()) {
       this.localStorageService.imgData = this.localStorageService.getData();
     }
@@ -39,4 +43,5 @@ export class GaleryComponent implements OnInit {
     this.localStorageService.setPairs(selected);
     this.router.navigate(['/game']);
   }
+  
 }
