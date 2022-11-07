@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OptionsComponent implements OnInit {
 
-  title: string = 'Opciones';
+  title: string = 'OPCIONES';
   saturate_value: number | string | null = localStorage.getItem('saturate');
   blur_value: number | string | null = localStorage.getItem('blur');
   brightness_value: number | string | null = localStorage.getItem('brightness');

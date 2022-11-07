@@ -59,3 +59,25 @@
     width: 40vw;
   }
 }
+
+.app-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 260px;
+  height: 223px;
+  background-color: #212023;
+  -webkit-box-shadow: 1px 0px 35px -8px rgba(0, 0, 0, 0.56);
+  box-shadow: 1px 0px 35px -8px rgba(0, 0, 0, 0.56);
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 12px 0;
+}
+
+@media (min-width: 720px) {
+  .app-card {
+    width: 520px;
+    height: 446px;
+  }
+}
+

@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+
   /*border-style: solid;*/
   height: 90vh;
   width: 100vw;
@@ -11,6 +12,11 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  height: 100vh;
+  width: 100%;
+  background-color: #f5bf67;
+
 }
 
 .app-card {
@@ -30,10 +36,14 @@
   }
 
   .app-card {
+
     width: 80%;
     height: 40%;
     margin: 0;
     /*border-style: solid;*/
     /*border-color: red;*/
+
+    margin: 0px 150px;
+
   }
 }
