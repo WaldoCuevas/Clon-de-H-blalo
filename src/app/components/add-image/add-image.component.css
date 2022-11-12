@@ -7,10 +7,7 @@
   justify-content: center;
   background-color: #ebebeb;
   padding: 10px;
-  background-image: url("../../../assets/img/wallpaper.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #ffffff;
   position: relative;
   z-index: 1;
 }
@@ -22,7 +19,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, #0c9cef61, #0edf7e61);
+  background: linear-gradient(90deg, #0c9cef, #0edf7e);
   z-index: -1;
 }
 
