@@ -1,11 +1,14 @@
 <app-navbar></app-navbar>
 <div class="galery-container">
   <form class="form" (ngSubmit)="submit()">
-    <div class="cards">
-      <app-card class="app-card" *ngFor="let item of data" [info]="item" [showAdd]="true"></app-card>
-      <app-card class="app-card" *ngFor="let item of localStorageService.imgData" [info]="item" [showDelete]="true"
-        [showAdd]="true"></app-card>
-    </div>
+    <!--<div class="cards">-->
+    <app-card
+      class="app-card"
+      *ngFor="let item of indexDBService.imgData"
+      [id]="item.id"
+      [showAdd]="true"
+    ></app-card>
+    <!--</div>-->
     <input class="submit" type="submit" value="Cambiar" />
   </form>
 </div>

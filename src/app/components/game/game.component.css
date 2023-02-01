@@ -1,73 +1,40 @@
 .game-container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 100%;
+  /*border-style: solid;*/
+  height: 90vh;
+  width: 100vw;
+  margin-top: 10vh;
+  /*background-image: url("../../../assets/img/wallpaper.jpg");*/
+  /*background-position: center center;*/
+  /*background-repeat: no-repeat;*/
+  /*background-size: cover;*/
   background-color: #f5bf67;
 }
 
-.btn {
-  position: fixed;
-  top: 5vh;
-  left: 5vw;
-  padding: 2px;
-  background-color: transparent;
-  border: none;
-  z-index: 99999;
-  transition: all 0.7s ease;
-}
-
-.btn-white {
-  color: #fff;
-}
-
-i {
-  font-size: 2.5em;
-}
-
-.activo {
-  left: 0;
-  opacity: 1;
-}
-
-.cards {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 95%;
-  height: 100%;
-}
-
 .app-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 260px;
-  height: 223px;
-  max-width: 100%;
-  margin: 12px 0;
+  width: 40%;
+  height: 90%;
+  margin: 2em;
+  /*border-style: solid;*/
+  /*border-color: red;*/
 }
-/*  576px, 768px, 992px y 1200px. */
 
-@media(min-width:992px) {
-  .cards {
-    flex-direction: row;
+@media (orientation: portrait) {
+  .game-container {
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 10vh;
+    height: 90vh;
   }
 
   .app-card {
-    margin: 0px 150px;
-  }
-} 
-
-@media (min-width:610px) and (max-height: 415px) {
-  .cards {
-    flex-direction: row;
-    padding-top: 15vh;
-  }
-
-  .app-card {
-    margin: 0px 12px;
+    width: 80%;
+    height: 40%;
+    margin: 0;
+    /*border-style: solid;*/
+    /*border-color: red;*/
   }
 }

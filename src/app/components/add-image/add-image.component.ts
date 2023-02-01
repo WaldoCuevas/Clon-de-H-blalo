@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { IndexDBService } from 'src/app/services/index-db.service';
 
 @Component({
   selector: 'app-add-image',
@@ -8,10 +8,7 @@ import { LocalStorageService } from 'src/app/services/local-storage.service';
   styleUrls: ['./add-image.component.css'],
 })
 export class AddImageComponent implements OnInit {
-  constructor(
-    private localStorageService: LocalStorageService,
-    private router: Router
-  ) {}
+  constructor(private indexDBService: IndexDBService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -19,10 +16,11 @@ export class AddImageComponent implements OnInit {
     const file = imgInput.files[0];
     const reader: any = new FileReader();
     reader.readAsDataURL(file);
-    reader.onloadend = (e: any) => {
+    reader.onloadend = async (e: any) => {
       formData.form.value.img = e.target.result;
+      formData.form.value.delete = true;
       //console.log(formData.form.value);
-      this.localStorageService.addImgData(formData.form.value);
+      await this.indexDBService.addImgData(formData.form.value);
       this.router.navigate(['/galery']);
     };
   }

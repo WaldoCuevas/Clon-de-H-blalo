@@ -7,49 +7,55 @@
   background-color: #cfacac;
 }
 
-.cards {
-  border: 0;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
 .form {
   margin-top: 15vh;
   width: 100%;
+  /*border-style: solid;*/
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.app-card {
+  background-color: #212023;
+  border-radius: 2em;
+  -webkit-box-shadow: 1em 0 35em -8em rgba(0, 0, 0, 0.56);
+  box-shadow: 1em 0 35em -8em rgba(0, 0, 0, 0.56);
+  margin: 2em;
+  width: 30vw;
+  /*border-style: solid;*/
 }
 
 .submit {
   position: fixed;
-  font-size: 1.15em;
+  font-size: 2.5vh;
   top: 2vh;
   right: 5vw;
-  padding: 0.2em 0.5em;
-  border: 3px solid #000;
-  border-radius: 20px;
+  padding: 0.2em;
+  border: 0.25em solid #000;
+  border-radius: 2.5em;
   background-color: #ffffff;
   z-index: 6;
 }
-.app-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 260px;
-  height: 223px;
-  background-color: #212023;
-  -webkit-box-shadow: 1px 0px 35px -8px rgba(0, 0, 0, 0.56);
-  box-shadow: 1px 0px 35px -8px rgba(0, 0, 0, 0.56);
-  max-width: 100%;
-  border-radius: 8px;
-  margin: 12px 0;
+
+@media (orientation: portrait) and (max-width: 800px) {
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .app-card {
+    width: 70vw;
+  }
 }
 
-@media (min-width: 720px) {
+@media (orientation: portrait) and (min-width: 800px) {
+  .form {
+    display: flex;
+  }
+
   .app-card {
-    width: 520px;
-    height: 446px;
+    width: 40vw;
   }
 }

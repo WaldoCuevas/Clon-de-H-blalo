@@ -10,13 +10,11 @@ import { DATA } from '../../cards-info';
 export class GameComponent implements OnInit {
   constructor(public localStorageService: LocalStorageService) {}
 
-  cards: any;
-
   public data = DATA;
 
   ngOnInit(): void {
     if (!this.localStorageService.isEmptyPairs()) {
-      this.localStorageService.imgPairs = this.localStorageService.getPairs();
+      this.localStorageService.pairsId = this.localStorageService.getPairs();
     }
   }
 }

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { IndexDBService } from 'src/app/services/index-db.service';
 import { SpeechService } from 'src/app/services/speech.service';
 
 @Component({
@@ -8,20 +8,22 @@ import { SpeechService } from 'src/app/services/speech.service';
   styleUrls: ['./card.component.css'],
 })
 export class CardComponent implements OnInit {
-  @Input() info: any;
+  @Input() id: any;
 
-  @Input() showDelete: any;
+  details: any;
 
   @Input() showAdd: any;
+
+  cardInfo: any;
 
   valor_filtros: string | undefined;
 
   constructor(
     private speechService: SpeechService,
-    private localStorageService: LocalStorageService
+    private indexDBService: IndexDBService
   ) {}
 
-  ngOnInit(): void {
+  async ngOnInit() {
     this.valor_filtros = `filter: saturate(${localStorage.getItem(
       'saturate'
     )}%) blur(${localStorage.getItem(
@@ -29,6 +31,7 @@ export class CardComponent implements OnInit {
     )}px) brightness(${localStorage.getItem(
       'brightness'
     )}%) contrast(${localStorage.getItem('contrast')}%);`;
+    this.cardInfo = await this.indexDBService.findById(parseInt(this.id));
   }
 
   hablar(input: string, html: any) {
@@ -43,8 +46,7 @@ export class CardComponent implements OnInit {
     }
   }
 
-  borrar(info: any) {
-    const index = this.localStorageService.imgData.indexOf(info);
-    this.localStorageService.deleteImgData(index);
+  async borrar(info: any) {
+    await this.indexDBService.deleteById(info.id);
   }
 }

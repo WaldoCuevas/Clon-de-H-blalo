@@ -1,8 +1,13 @@
-<div class="container-imagen">
-  <img #img class="imagen" [src]="info.img" alt="image" (click)="hablar(info.title, img)" [style]="valor_filtros" />
+<div *ngIf="cardInfo" class="container-imagen">
+  <img *ngIf="showAdd" #img class="img-gallery" [src]="cardInfo.img" alt="image" (click)="hablar(cardInfo.title, img)"
+    [style]="valor_filtros" />
+  <img *ngIf="!showAdd" #img class="img-game" [src]="cardInfo.img" alt="image" (click)="hablar(cardInfo.title, img)"
+    [style]="valor_filtros" />
   <div class="buttons">
-    <h2 #h2 class="title" (click)="hablar(info.title, h2)">{{ info.title }}</h2>
+    <h2 #h2 class="title" [id]="cardInfo.id" (click)="hablar(cardInfo.title, h2)">
+      {{ cardInfo.title }}
+    </h2>
     <input *ngIf="showAdd" class="title check" type="checkbox" />
-    <input (click)="borrar(info)" *ngIf="showDelete" type="button" class="title delete" value="X" />
+    <input (click)="borrar(cardInfo)" *ngIf="showAdd && cardInfo.delete" type="button" class="title delete" value="X" />
   </div>
 </div>

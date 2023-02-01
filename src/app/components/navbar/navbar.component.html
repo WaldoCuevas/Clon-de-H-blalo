@@ -1,9 +1,5 @@
 <div class="nav">
-  <div>
-    <button class="btn" (click)="toggle(navbar)">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-  </div>
+  <i (click)="toggle(navbar)" class="fa-solid fa-bars btn"></i>
 </div>
 
 <nav #navbar class="navbar" (click)="toggle(navbar)">
@@ -12,7 +8,9 @@
       <a routerLink="/home" routerLinkActive="active" class="link">HOME</a>
     </li>
     <li class="list-item">
-      <a routerLink="/add-image" routerLinkActive="active" class="link">AGREGAR IMAGEN</a>
+      <a routerLink="/add-image" routerLinkActive="active" class="link"
+        >AGREGAR IMAGEN</a
+      >
     </li>
     <li class="list-item">
       <a routerLink="/galery" routerLinkActive="active" class="link">GALERÍA</a>
@@ -22,3 +20,4 @@
     </li>
   </ul>
 </nav>
+
